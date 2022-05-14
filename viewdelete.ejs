@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if  IE 7]>        <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if  IE 8]>        <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+   <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+        <title>โรงเบียร์ อเมริกา delete</title>
+        <meta name="description" content=""> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>delete</h1>
+        <% if(typeof mesg != "undefined") { %>
+            <h2><%= mesg %></h2>
+        <% } %>
+        <a href="/additem">     additem   </a><a href="/delete">    delete   </a>
+        <table id="table">
+            <tr>
+                <th>Select</th>
+                <th>id<th>              
+                <th>name</th> 
+                <th>tagline</th>
+                <th>description</th>
+                <th>image</th>
+            </tr> 
+            <form action="/delete"method="post">
+                 <% beers.forEach(function (item) { %>   
+                 <tr> 
+                    <td><input type="radio" name = "id" value=<%=item.id%> ></td> 
+                    <td><%= item.id%></td> 
+                    <td><%= item.name%></td> 
+                    <td><%=item.tagline%></td>
+                    <td><%=item.description%></td>
+                    <td><%=item.image%></td>
+                </tr>  
+                <% }) %> 
+                
+        </table> 
+        <button type="submit">Delete</button>
+            </form>
+        
+        <script src="" async defer></script>
+    </body>
+</html>   
